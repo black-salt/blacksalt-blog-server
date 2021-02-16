@@ -1,0 +1,31 @@
+{
+  "name": "koa-mongodb-interface",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-bouncer": "^6.0.4",
+    "koa-cors": "0.0.16",
+    "koa-multer": "^1.0.2",
+    "koa-parameter": "^3.0.1",
+    "koa-router": "^8.0.8",
+    "koa-session": "^5.13.1",
+    "koa-static": "^5.0.0",
+    "mongoose": "^5.9.5",
+    "svg-captcha": "^1.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
