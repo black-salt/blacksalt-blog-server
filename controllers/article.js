@@ -107,8 +107,8 @@ let deleteCategory = async (ctx) => {
 
 // 文章
 let getArticleList = async (ctx) => {
-  let pageSize = ctx.query.pageSize || 10; // 每页数量
-  let pageNum = ctx.query.pageNum || 1; // 当前页码
+  let pageSize = 10; // 每页数量
+  let pageNum = ctx.query.pageNum; // 当前页码
   let options = {
     skip: Number((pageNum - 1) * pageSize),
     limit: Number(pageSize),

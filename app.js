@@ -1,5 +1,5 @@
 const Koa = require("koa");
-const cors = require("koa-cors");
+const cors = require("koa2-cors");
 const session = require("koa-session");
 const parameter = require("koa-parameter");
 const bouncer = require("koa-bouncer");
@@ -21,8 +21,14 @@ const CONFIG = {
   rolling: false,
   renew: false,
 };
-app.use(session(CONFIG, app));
-app.use(cors());
+app.use(session(CONFIG, app)); //此时，产生sessionid，并setcookie（id，'...'）
+app.use(cors({
+  origin: 'http://localhost:8190',// 如果为*就是通配，写明详细url才行, 这是允许访问接口的客户端地址，就是允许跨域访问的客户端地址
+  credentials: true, //将凭证暴露出来, 前端才能获取cookie
+  allowMethods: ['GET', 'POST', 'DELETE', 'PUT'],
+  exposeHeaders: ['Authorization'], // 将header字段expose出去，前端才能获取该header字段
+  allowHeaders: ['Content-Type', 'Authorization', 'Accept'] // 允许添加到header的字段
+}));
 app.use(parameter(app));
 app.use(bouncer.middleware());
 app.use(

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./app.js"
+    "dev": "nodemon ./app.js",
+    "pm2": "pm2 start ./app.js"
   },
   "keywords": [],
   "author": "",
@@ -22,10 +23,12 @@
     "koa-router": "^8.0.8",
     "koa-session": "^5.13.1",
     "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
     "mongoose": "^5.9.5",
     "svg-captcha": "^1.4.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "pm2": "^4.5.5"
   }
 }

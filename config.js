@@ -1,6 +1,6 @@
 module.exports = {
   // 启动端口
-  port: 8191,
+  port: 3072,
   // 数据库配置
   database: {
     dbName: "myblog",
